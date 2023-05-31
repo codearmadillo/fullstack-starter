@@ -2,7 +2,14 @@
   "name": "fullstack-starter",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "frontend:serve": "nx serve frontend",
+    "frontend:build": "nx build frontend",
+    "frontend:build:prod": "nx build frontend --configuration=production",
+    "backend:serve": "nx serve backend",
+    "backend:build": "nx build backend",
+    "backend:build:prod": "nx build backend --configuration=production"
+  },
   "private": true,
   "devDependencies": {
     "@angular-devkit/build-angular": "~16.0.0",
@@ -59,9 +66,12 @@
     "@nestjs/core": "^9.1.1",
     "@nestjs/platform-express": "^9.1.1",
     "axios": "^1.0.0",
+    "mysql": "^2.18.1",
+    "pg": "^8.11.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",
     "tslib": "^2.3.0",
+    "typeorm": "^0.3.16",
     "zone.js": "~0.13.0"
   }
 }
