@@ -1,24 +1,14 @@
-import { Module } from '@nestjs/common';
+import {MiddlewareConsumer, Module, NestModule, RequestMethod} from '@nestjs/common';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import {TypeOrmModule} from "@nestjs/typeorm";
-import {User} from "../entities/user";
+import {AppController} from './app.controller';
+import {IdentityModule} from "./features/identity/identity.module";
+import {IdentityMiddleware} from "./features/identity/middleware/identity.middleware";
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: '',
-      database: 'test',
-      entities: [User],
-      synchronize: true,
-    }),
+    IdentityModule
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [],
 })
-export class AppModule {}
+export class AppModule { }

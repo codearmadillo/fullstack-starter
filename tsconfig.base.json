@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@fullstack-starter/database-api": ["libs/database-api/src/index.ts"],
+      "@fullstack-starter/mauth-api": ["libs/mauth-api/src/index.ts"],
+      "@fullstack-starter/mauth-ng": ["libs/mauth-ng/src/index.ts"],
       "@fullstack-starter/shared": ["libs/shared/src/index.ts"]
     }
   },

@@ -1,14 +1,26 @@
-import { Controller, Get } from '@nestjs/common';
-
-import { AppService } from './app.service';
-import {environment} from "../environments/environment";
+import {Controller, Get, HttpException, HttpStatus, UseGuards} from '@nestjs/common';
+import {IdentityGuard} from "./features/identity/guards/identity.guard";
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
 
   @Get()
   getData() {
-    return environment.apiName;
+    return { status: 'ok' };
+  }
+
+  @Get('unauthorized')
+  getUnauthorized() {
+    return 'ok';
+  }
+
+  @Get('refresh')
+  getRefresh() {
+    return { status: 'refreshed' };
+  }
+
+  @Get('refreshUnauthorized')
+  getRefreshUnauthorized() {
+    throw new HttpException('Unauthorized', HttpStatus.UNAUTHORIZED);
   }
 }
