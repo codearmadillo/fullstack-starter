@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .typography-page-title {
+    @apply font-title font-semibold not-italic text-3xl m-0 p-0 pb-4;
+  }
+  .typography-page-section-title {
+    @apply font-title font-semibold not-italic text-xl m-0 p-0 pb-4 pt-1;
+  }
+  .typography-body {
+    @apply font-body font-normal not-italic text-base;
+  }
+  .typography-input-label {
+    @apply font-body font-normal not-italic text-sm;
+  }
+  .typography-sidebar-title {
+    @apply font-title font-semibold text-xl mb-3;
+  }
+}

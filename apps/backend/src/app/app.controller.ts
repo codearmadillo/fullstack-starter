@@ -1,5 +1,5 @@
 import {Controller, Get, HttpException, HttpStatus, UseGuards} from '@nestjs/common';
-import {IdentityGuard} from "./features/identity/guards/identity.guard";
+import {MAuthApiGuard} from "@fullstack-starter/mauth-api";
 
 @Controller()
 export class AppController {
@@ -9,18 +9,9 @@ export class AppController {
     return { status: 'ok' };
   }
 
-  @Get('unauthorized')
+  @UseGuards(MAuthApiGuard)
+  @Get('locked')
   getUnauthorized() {
     return 'ok';
-  }
-
-  @Get('refresh')
-  getRefresh() {
-    return { status: 'refreshed' };
-  }
-
-  @Get('refreshUnauthorized')
-  getRefreshUnauthorized() {
-    throw new HttpException('Unauthorized', HttpStatus.UNAUTHORIZED);
   }
 }

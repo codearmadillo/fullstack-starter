@@ -2,7 +2,7 @@ import {HttpException, HttpStatus, Injectable, Scope} from '@nestjs/common';
 import {Identity} from "../model/identity";
 import {DatabaseProvider} from "@fullstack-starter/database-api";
 import {Session, User} from "@prisma/client";
-import {createHash} from "@fullstack-starter/shared";
+import {createSha256Hash} from "@fullstack-starter/shared";
 
 @Injectable({ scope: Scope.REQUEST })
 export class IdentityService {
@@ -35,7 +35,7 @@ export class IdentityService {
     // create login request for user
     const login = await this.database.login.create({
       data: {
-        token: createHash(`${user.uuid}-${new Date().getTime()}`),
+        token: createSha256Hash(`${user.uuid}-${new Date().getTime()}`),
         userUuid: user.uuid
       }
     });
@@ -116,8 +116,8 @@ export class IdentityService {
     const session = await this.database.session.create({
       data: {
         userUuid: user?.uuid as string,
-        sessionToken: createHash(`session-token_${user?.uuid}-${login.uuid}-${login.token}_${new Date().getTime()}`),
-        refreshToken: createHash(`refresh-token_${user?.uuid}-${login.uuid}-${login.token}_${new Date().getTime()}`)
+        sessionToken: createSha256Hash(`session-token_${user?.uuid}-${login.uuid}-${login.token}_${new Date().getTime()}`),
+        refreshToken: createSha256Hash(`refresh-token_${user?.uuid}-${login.uuid}-${login.token}_${new Date().getTime()}`)
       }
     });
 
@@ -152,7 +152,7 @@ export class IdentityService {
     }
 
     // generate new refresh token
-    const updatedRefreshToken = createHash(`refresh-token_${session?.userUuid}-${session.sessionToken}_${refreshToken}_${new Date().getTime()}`)
+    const updatedRefreshToken = createSha256Hash(`refresh-token_${session?.userUuid}-${session.sessionToken}_${refreshToken}_${new Date().getTime()}`)
 
     // update session
     const updatedSession = await this.database.session.update({

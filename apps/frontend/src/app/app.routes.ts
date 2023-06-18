@@ -1,6 +1,5 @@
 import { Route } from '@angular/router';
 import {HomeComponent} from "./views/home/home.component";
-import {LoginComponent} from "./views/login/login.component";
 
 export const appRoutes: Route[] = [
   {
@@ -9,7 +8,7 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    loadChildren: () => import('./views/login/routes').then((mod) => mod.LOGIN_ROUTES)
   },
   {
     path: '**',

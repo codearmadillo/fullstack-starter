@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card {
+    @apply bg-white rounded-md shadow-md;
+  }
+  .card:not(.card--seamless) {
+    @apply py-2 px-3;
+  }
+  .page-section {
+    @apply max-w-3xl py-4;
+  }
+  .page-section:not(:last-child) {
+    @apply mb-3;
+  }
+}

@@ -9,7 +9,7 @@ import {MAuthApiGuard} from "./guard/mauth-api.guard";
   imports: [ DatabaseModule ],
   controllers: [ MAuthApiController ],
   providers: [ IdentityService, MAuthApiGuard, MAuthApiMiddleware ],
-  exports: [ MAuthApiGuard ],
+  exports: [ IdentityService, MAuthApiGuard ],
 })
 export class MAuthApiModule implements NestModule {
   configure(consumer: MiddlewareConsumer): any {

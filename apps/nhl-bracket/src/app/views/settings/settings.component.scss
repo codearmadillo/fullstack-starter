@@ -1,0 +1,16 @@
+.header-icon {
+  @apply text-slate-600;
+}
+
+.c-table-row.c-table-row--header {
+  .c-cell--stat {
+    @apply text-center;
+  }
+}
+
+.c-cell--title {
+  @apply flex-auto flex items-center text-sm text-slate-800;
+}
+.c-cell--stat {
+  @apply flex-none w-9;
+}

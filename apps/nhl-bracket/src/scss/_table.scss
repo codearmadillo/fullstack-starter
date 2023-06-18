@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .c-table {
+    @apply bg-slate-100 pt-1 overflow-hidden rounded-md;
+  }
+  .c-table-row {
+    @apply flex w-full gap-x-1 px-3 py-2;
+  }
+  .c-table-row--header .c-cell {
+    @apply font-semibold;
+  }
+  .c-table-row:not(.c-table-row--header) {
+    &:nth-of-type(2n) {
+      @apply bg-slate-200;
+    }
+  }
+  .c-table-row.c-table-row--header {
+    @apply pb-2;
+  }
+
+}

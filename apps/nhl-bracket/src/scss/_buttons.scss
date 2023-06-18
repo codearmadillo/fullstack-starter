@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .button {
+    @apply flex items-center justify-center h-10 px-5 transition rounded-lg text-sm font-semibold;
+    @apply w-full md:w-auto;
+  }
+
+  .button--cta {
+    &.button--solid {
+      @apply bg-action text-action-contrast hover:bg-action-dark hover:text-action-contrast;
+    }
+    &.button--outline {
+      @apply border-action text-action hover:bg-action-dark hover:text-action-contrast hover:border-action-dark;
+    }
+  }
+  .button--warning {
+    &.button--solid {
+      @apply bg-warning text-warning-contrast hover:bg-warning-dark hover:text-warning-contrast;
+    }
+    &.button--outline {
+      @apply border-warning text-warning hover:bg-warning-dark hover:text-warning-contrast hover:border-warning-dark;
+    }
+  }
+
+  .button--outline {
+    @apply border-2 border-solid bg-transparent;
+  }
+  .button--solid {
+    @apply border-0;
+  }
+
+  /*
+  .button--cta {
+    @apply bg-slate-800 border-slate-800 text-white hover:bg-slate-900 focus:bg-slate-900;
+  }
+  .button--outline {
+    @apply border border-solid border-slate-800 text-slate-800;
+  }
+  .button--cta {
+    @apply hover:bg-action hover:border-action hover:text-white;
+  }
+
+  .button--outline {
+    @apply bg-transparent border-2 border-solid;
+  }
+   */
+}

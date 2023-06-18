@@ -1,0 +1,73 @@
+.bracket-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(7, auto);
+  grid-template-areas:
+    "w_r1_s1 w_r1_s1 . . . . . . . . e_r1_s1 e_r1_s1"
+    ". . w_r2_s1 w_r2_s1 . . . . e_r2_s1 e_r2_s1 . ."
+    "w_r1_s2 w_r1_s2 . . . . . . . . e_r1_s2 e_r1_s2"
+    ". . . . w_cf w_cf e_cf e_cf . . . ."
+    "w_r1_s3 w_r1_s3 . . . . . . . . e_r1_s3 e_r1_s3"
+    ". . w_r2_s2 w_r2_s2 . scf scf . e_r2_s2 r_r2_s2 . ."
+    "w_r1_s4 w_r1_s4 . . . . . . . . e_r1_s4 e_r1_s4";
+}
+
+#w_r1_s1 {
+  grid-area: w_r1_s1;
+}
+
+#w_r2_s1 {
+  grid-area: w_r2_s1;
+}
+
+#w_r1_s2 {
+  grid-area: w_r1_s2;
+}
+
+#w_cf {
+  grid-area: w_cf;
+}
+
+#w_r1_s3 {
+  grid-area: w_r1_s3;
+}
+
+#w_r2_s2 {
+  grid-area: w_r2_s2;
+}
+
+#w_r1_s4 {
+  grid-area: w_r1_s4;
+}
+
+#e_r1_s1 {
+  grid-area: e_r1_s1;
+}
+
+#e_r2_s1 {
+  grid-area: e_r2_s1;
+}
+
+#e_r1_s2 {
+  grid-area: e_r1_s2;
+}
+
+#e_cf {
+  grid-area: e_cf;
+}
+
+#e_r1_s3 {
+  grid-area: e_r1_s3;
+}
+
+#e_r2_s2 {
+  grid-area: e_r2_s2;
+}
+
+#e_r1_s4 {
+  grid-area: e_r1_s4;
+}
+
+#scf {
+  grid-area: scf;
+}

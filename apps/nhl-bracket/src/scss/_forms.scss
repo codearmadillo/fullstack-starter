@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input-block {
+    @apply block md:flex;
+  }
+  .input-block:not(:last-child) {
+    @apply mb-2;
+  }
+  .input-label, .input-field {
+    @apply h-10;
+  }
+  .input-label {
+    @apply flex-auto flex items-center pr-5;
+  }
+  .input-field {
+    @apply flex-none;
+    @apply w-full md:w-auto inline-flex items-center px-3 rounded-md bg-white transition border-2 border-solid border-slate-200;
+  }
+  .input-field--multiselect {
+    @apply p-0;
+  }
+  .input-field--standalone {
+    @apply flex items-center justify-center px-0 text-center w-full;
+  }
+  .input-field:not([disabled]) {
+    @apply hover:border-slate-400;
+    @apply focus:border-action active:border-action;
+  }
+  .input-field[disabled] {
+    @apply bg-slate-100 border-slate-200 text-slate-600 cursor-not-allowed;
+  }
+  .form-footer {
+    @apply mt-5 flex justify-end;
+  }
+}

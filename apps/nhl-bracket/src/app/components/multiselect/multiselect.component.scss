@@ -1,0 +1,6 @@
+:host {
+  @apply flex overflow-hidden min-w-[185px];
+}
+.selected {
+  @apply bg-slate-400 text-white;
+}

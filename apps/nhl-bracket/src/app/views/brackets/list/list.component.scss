@@ -1,0 +1,12 @@
+.c-cell--created {
+  @apply flex-none w-2/5;
+}
+.c-cell--title {
+  @apply flex-auto flex items-center;
+}
+.c-cell--delete {
+  @apply flex-none w-9;
+}
+.delete-icon {
+  @apply text-slate-600 transition hover:text-slate-700 hover:cursor-pointer;
+}

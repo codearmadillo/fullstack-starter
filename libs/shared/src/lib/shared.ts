@@ -1,8 +1,10 @@
+import { createHash } from 'crypto';
+
 export function shared(): string {
   return 'shared';
 }
 
-export function createHash(stringInput: string) {
+export function createSha256Hash(stringInput: string) {
   return createHash("sha256").update(stringInput).digest('hex');
 }
 

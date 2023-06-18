@@ -1,0 +1,5 @@
+.sidebar-link {
+  @apply flex items-center w-full justify-start h-12 lg:h-14 text-sm lg:text-base px-2 lg:px-4;
+  @apply border-b border-slate-200 border-solid;
+  @apply transition hover:bg-slate-100;
+}

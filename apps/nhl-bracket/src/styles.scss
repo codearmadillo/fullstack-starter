@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Cabin', sans-serif;
+}
+
+@import './scss/typography';
+@import './scss/layout';
+@import './scss/forms';
+@import './scss/buttons';
+@import './scss/table';
+
